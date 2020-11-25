@@ -17,11 +17,9 @@ title: CI App alpha docs
 description: >- # this means to ignore newlines until "baseurl:"
   Find here how to setup the Datadog tracer for your tests. This guide is only valid 
   during the alpha phase.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
-remote_theme: pmarsceill/just-the-docs
+remote_theme: pmarsceill/just-the-docs@v0.2.8
 aux_links: ""
 
 # Exclude from processing.
