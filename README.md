@@ -1,6 +1,6 @@
 # CI App alpha docs
 
-[See the docs online](https://datadoghq.dev/ci-app-alpha-docs/).
+[See the docs online](https://datadoghq.dev/ciapp-alpha-docs/).
 
 ## How to add documentation
 
