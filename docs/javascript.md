@@ -1,27 +1,34 @@
 ---
 layout: page
-title:  "Javascript Tracer - Jest Instrumentation"
-date:   2020-11-24 14:37:09 +0100
+title:  Javascript Tracer - Jest Instrumentation
 categories: javascript jest
 ---
 
 # Javascript Tracer - Jest Instrumentation
 
-To instrument your tests you'll need a custom [testEnvironment](https://jestjs.io/docs/en/configuration#testenvironment-string):
+The Datadog Javascript Tracer now exports a function `getEnvironment` to wrap your [testEnvironment](https://jestjs.io/docs/en/configuration#testenvironment-string):
+
 {% highlight javascript %}
 // testEnvironment.js in your repository's root folder
-const NodeEnvironment = require('jest-environment-node') // jest-environment-jsdom for ui tests
 const { getEnvironment } = require('dd-trace/packages/datadog-plugin-jest/src/index')
 
-module.exports = getEnvironment(NodeEnvironment)
+// it can be jest-environment-jsdom for ui tests or any other environment you use
+const JestEnvironment = require('jest-environment-node') 
+
+module.exports = getEnvironment(JestEnvironment)
 {% endhighlight %}
 
-And then in your `jest.config.js`: 
+
+Then you need to configure `testEnvironment` in your `jest.config.js` or however you normally configure [jest](https://jestjs.io/docs/en/configuration):
 
 {% highlight javascript %}
 module.exports = {
   // ...
-  testEnvironment: '<rootDir>/testEnvironment.js',
+  testEnvironment: '<rootDir>/testEnvironment.js', // refers to the file above
   // ...
 }
 {% endhighlight %}
+
+## Datadog Agent 
+
+The [Datadog Agent](https://docs.datadoghq.com/agent/) needs to be accessible by the environment you're using to run your tests on.

@@ -1,10 +1,9 @@
 ---
-layout: page
+layout: home
 title: Home
-permalink: /home/
+permalink: /
 ---
 
 # CI App alpha docs
 
-Here you will find how to instrument your tests for different languages using the 
-Datadog Tracer.
+Here you will find how to instrument your tests for different languages.
