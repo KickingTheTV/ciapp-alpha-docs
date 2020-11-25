@@ -25,3 +25,14 @@ permalink: /java
 ---
 ```
 * Add your instructions to the file.
+
+## How to add syntax highlighted code
+
+You can add syntax highlighted code through this tag:
+```
+{% highlight javascript %}
+...
+{% endhighlight %}
+```
+
+See [javascript.md](/docs/javascript.md) for an example.
