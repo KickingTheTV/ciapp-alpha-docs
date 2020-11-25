@@ -263,7 +263,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  github-pages
+  github-pages (~> 209)
   just-the-docs
   kramdown-parser-gfm
   tzinfo (~> 1.2)
