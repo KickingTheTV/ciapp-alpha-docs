@@ -25,6 +25,7 @@ permalink: /java
 ---
 ```
 * Add your instructions to the file.
+* Push your code to the `main` branch or create a pull request.
 
 ## How to add syntax highlighted code
 
