@@ -64,7 +64,7 @@ All configuration options below have system property and environment variable eq
 | SYSTEM PROPERTY                 | ENVIRONMENT VARIABLE            | DEFAULT | DESCRIPTION                                             |
 |---------------------------------|---------------------------------|---------|---------------------------------------------------------|
 | `dd.integration.junit.enabled`  | `DD_INTEGRATION_JUNIT_ENABLED`  | `false` | When `true`, tests based on JUnit runners are reported. |
-| `dd.integration.testng.enabled` | `DD_INTEGRATION_TESTNG_ENABLED` | `false` | When `true`, testes based on TestNG are reported.       |
+| `dd.integration.testng.enabled` | `DD_INTEGRATION_TESTNG_ENABLED` | `false` | When `true`, tests based on TestNG are reported.       |
 
 ## Datadog Agent 
 
