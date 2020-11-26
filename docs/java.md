@@ -11,6 +11,8 @@ Follow the official installation [guide](https://docs.datadoghq.com/tracing/setu
 
 The `-javaagent` property needs to be configured in your build framework.
 
+**Note**: Use `dd-java-agent` combined with `dd-trace-ot` is not allowed. If you use `dd-trace-ot` in your tests, you need to adapt your code to use other Opentracing implementation: E.g. `opentracing-mock`. 
+
 ### Maven
 
 Configure the [`Maven Surefire Plugin`](https://maven.apache.org/surefire/maven-surefire-plugin/) and/or the [`Maven Failsafe Plugin`](https://maven.apache.org/surefire/maven-failsafe-plugin/) to use Datadog Java agent:
