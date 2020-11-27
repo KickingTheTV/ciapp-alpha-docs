@@ -147,7 +147,7 @@ If you don't see any results in Datadog after following the [Java Test Instrumen
 
 **Have you started a Datadog Agent instance?**
 
-The Datadog Java agent needs a Datadog Agent instance running and accessible from the environment where the tests are being executed to send the traces to Datadog.
+The Datadog Java agent needs a [Datadog Agent](https://docs.datadoghq.com/agent/) instance running and accessible from the environment where the tests are being executed to send the traces to Datadog.
 
 Additionally, `DD_AGENT_HOST` and `DD_TRACE_AGENT_PORT` options need to be configured properly in case the default values (`localhost`,`8126`) are not correct.  
 
