@@ -14,14 +14,14 @@ cd ci-app-alpha-docs/docs
 ```
 * Create your markdown file
 ```
-touch java.md
+touch tests/java.md
 ```
-* Add the metadata on top of the file (see [javascript.md](/docs/javascript.md) for an example):
+* Add the metadata on top of the file (see [javascript.md](/docs/tests/javascript.md) for an example):
 ```
 ---
 layout: page
-title:  Java Tracer - Test Instrumentation
-permalink: /java
+title:  Java Test Instrumentation
+permalink: /tests/java
 ---
 ```
 * Add your instructions to the file.
@@ -36,4 +36,4 @@ You can add syntax highlighted code through this tag:
 {% endhighlight %}
 ```
 
-See [javascript.md](/docs/javascript.md) for an example.
+See [javascript.md](/docs/tests/javascript.md) for an example.

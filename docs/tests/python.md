@@ -2,7 +2,7 @@
 layout: page
 title:  Python Test Instrumentation
 categories: python pytest
-permalink: /python
+permalink: /tests/python
 ---
 
 # Installation

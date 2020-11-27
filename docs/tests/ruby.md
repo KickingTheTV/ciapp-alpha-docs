@@ -2,7 +2,7 @@
 layout: page
 title:  Ruby Test Instrumentation
 categories: ruby rspec cucumber
-permalink: /ruby
+permalink: /tests/ruby
 ---
 
 # Installation

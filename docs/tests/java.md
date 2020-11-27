@@ -2,7 +2,7 @@
 layout: page
 title:  Java Test Instrumentation
 categories: java test
-permalink: /java
+permalink: /tests/java
 ---
 
 # Installation
