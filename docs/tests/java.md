@@ -155,4 +155,4 @@ Additionally, `DD_AGENT_HOST` and `DD_TRACE_AGENT_PORT` options need to be confi
 
 If you are executing your tests in a container, you need to forward several environment variables depending on your CI provider.
 
-You can find further information in [Running tests inside a container](common/tests_in_container.md) section.
+You can find further information in [Running tests inside a container](common/tests_in_container) section.

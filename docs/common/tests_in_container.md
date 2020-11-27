@@ -2,7 +2,7 @@
 layout: page
 title:  Running tests inside a container
 categories: test container
-permalink: /common/test_in_container
+permalink: /common/tests_in_container
 ---
 
 # Running tests inside a container
