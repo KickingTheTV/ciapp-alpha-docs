@@ -45,9 +45,9 @@ The [Datadog Agent](https://docs.datadoghq.com/agent/) needs to be accessible by
 * Appveyor
 * Azure Pipelines
 * BitBucket
-* Build Kite
-* Circle CI
+* BuildKite
+* CircleCI
 * Github Actions
 * Gitlab
 * Jenkins
-* Travis CI
+* TravisCI
