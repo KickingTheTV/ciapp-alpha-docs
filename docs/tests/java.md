@@ -9,7 +9,7 @@ permalink: /java
 
 ## Maven
 
-Add a new Maven profile in your root `pom.xml` configuring the Datadog Java agent dependency and the `javaagent` arg property, , replacing `0.68.0` with the latest version of the agent: 
+Add a new Maven profile in your root `pom.xml` configuring the Datadog Java agent dependency and the `javaagent` arg property, replacing `0.68.0` with the latest version of the agent: 
 
 {% highlight xml %}
 <profile>
@@ -67,7 +67,7 @@ After this, you can run your tests using the `ci-app` profile, for example using
 
 ## Gradle
 
-Add the `ddTracerAgent` entry to the `configurations` task block and add the Datadog Java agent dependency, replacing `0.68.0` with the latest version of the agent.
+Add the `ddJavaAgent` entry to the `configurations` task block and add the Datadog Java agent dependency, replacing `0.68.0` with the latest version of the agent.
 
 {% highlight groovy %}
 configurations {
@@ -81,7 +81,7 @@ dependencies {
 
 ### Instrumenting your tests
 
-Configure the `test` Gradle task by adding to the `jvmArgs` attribute the `-javaagent` argument targeting the Datadog Java agent based on the `configurations.ddTracerAgent` property.
+Configure the `test` Gradle task by adding to the `jvmArgs` attribute the `-javaagent` argument targeting the Datadog Java agent based on the `configurations.ddJavaAgent` property.
 
 {% highlight groovy %}
 test {

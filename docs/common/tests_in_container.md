@@ -7,7 +7,7 @@ permalink: /common/test_in_container
 
 # Running tests inside a container
 
-If you are running your application or tests inside a container, forward the following environment variables depending on your CI provider, so the Datadog Tracer can autodetect the build information.
+If you are running your tests inside a container, forward the following environment variables depending on your CI provider, so the Datadog Tracer can autodetect the build information.
 
 ### Appveyor
 
