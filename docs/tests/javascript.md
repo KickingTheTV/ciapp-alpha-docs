@@ -2,7 +2,7 @@
 layout: page
 title:  Javascript Tracer - Jest Instrumentation
 categories: javascript jest
-permalink: /javascript
+permalink: /tests/javascript
 ---
 
 # Javascript Tracer - Jest Instrumentation
