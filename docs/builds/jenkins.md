@@ -10,10 +10,10 @@ parent: Build Instrumentation
 
 Follow the official installation [guide](https://github.com/jenkinsci/datadog-plugin/blob/master/README.md).
 
-To enable the APM traces collection for Jenkins builds and pipelines, it's needed:
+To enable the APM traces collection for Jenkins builds and pipelines:
 
-* To have installed the Jenkins plugin v2.1.1+ (Available in the Jenkins marketplace).
-* To have configured the Jenkins plugin to use the `Datadog Agent` mode.
+* Installed the Jenkins plugin v2.1.1+ (available in the Jenkins marketplace).
+* Configure the Jenkins plugin to use the `Datadog Agent` mode.
 
 APM Traces feature is only available if the `Datadog Agent` mode is selected.
 
@@ -40,14 +40,14 @@ To enable this feature, you need to activate it manually following the next step
 *  Save and close.
 *  Restart Jenkins.
 
-If everything has been well configured, you should read the following lines in the Jenkins log after restarting it:
+If everything has been well configured, you should be able to see the following lines in the Jenkins log after restarting it:
 
 {% highlight txt %}
 INFO    datadog.trace.core.CoreTracer#<init>: New instance: DDTracer-62fcf62{ ... }
 INFO    datadog.trace.core.StatusLogger#logStatus: DATADOG TRACER CONFIGURATION { ... }
 {% endhighlight %}
 
-Now you can use your Jenkins as normally yo do.
+Now you can use your Jenkins as you normally do.
 
 ## Datadog Agent
 

@@ -16,7 +16,7 @@ If you don't see any results in Datadog after following the installation guide f
 
 The Datadog Tracer may need a [Datadog Agent](https://docs.datadoghq.com/agent/) instance running and accessible from the environment where the tests are being executed.
 
-Additionally, `DD_AGENT_HOST` and `DD_TRACE_AGENT_PORT` options need to be configured properly in case the default values (`localhost`,`8126`) are not correct.  
+Additionally, `DD_AGENT_HOST` and `DD_TRACE_AGENT_PORT` options need to be configured properly in case the Datadog Agent is not using its default url (`localhost:8126`).  
 
 **Have you forwarded the required environment variables?**
 

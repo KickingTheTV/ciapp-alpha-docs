@@ -15,10 +15,10 @@ You can start tracing your development workflow since a commit is pushed to your
 
 ## Tracing your builds
 
-You will obtain different insights about your build in the `Build Pipelines` and `Build Executions` sections under the CI menu in Datadog once your CI provider had been instrumented.
+You will obtain different insights about your build in the `Build Pipelines` and `Build Executions` sections under the CI menu in Datadog once your CI provider has been instrumented.
 
 Some of those insights are:
-* Status of the last build
+* Status of the last build.
 * Average, P95 and last build duration.
 * Finished builds per hour.
 * Failure rate of a certain build.
@@ -34,7 +34,7 @@ Some of those insights for a certain commit are:
 * Test statuses.
 * Total number of executed tests.
 * Failure rate.
-* Wall Time clock duration for the test phase.
+* Wall time clock duration for the test phase.
 * Avg delta duration change between commits.
 
 You can find an example of these test insights [here](https://app.datadoghq.com/ci/test-dashboard/logs-backend-tests?env=ci&branch=prod&repoUrl=https%3A%2F%2Fgitlab.ddbuild.io%2FDataDog%2Flogs-backend.git) for one repository that is currently reporting to Datadog.
