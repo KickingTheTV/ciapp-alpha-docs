@@ -1,8 +1,9 @@
 ---
 layout: page
-title:  Python Test Instrumentation
+title:  Python
 categories: python pytest
 permalink: /tests/python
+parent: Test Instrumentation
 ---
 
 # Installation
@@ -42,12 +43,12 @@ The [Datadog Agent](https://docs.datadoghq.com/agent/) needs to be accessible by
 
 # Supported CI providers
 
-* Appveyor
-* Azure Pipelines
-* BitBucket
-* BuildKite
-* CircleCI
-* Github Actions
-* Gitlab
-* Jenkins
-* TravisCI
+* [Appveyor](https://www.appveyor.com/)
+* [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/)
+* [BitBucket](https://bitbucket.org/)
+* [BuildKite](https://buildkite.com/)
+* [CircleCI](https://circleci.com/)
+* [Github Actions](https://github.com/features/actions)
+* [Gitlab](https://docs.gitlab.com/ee/ci/)
+* [Jenkins](https://www.jenkins.io/)
+* [TravisCI](https://travis-ci.org/)

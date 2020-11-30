@@ -1,11 +1,14 @@
 ---
 layout: page
-title:  Javascript Tracer - Jest Instrumentation
+title:  Javascript
 categories: javascript jest
 permalink: /tests/javascript
+parent: Test Instrumentation
 ---
 
-# Javascript Tracer - Jest Instrumentation
+# Installation
+
+# Jest Instrumentation
 
 The Datadog Javascript Tracer now exports a function `getEnvironment` to wrap your [testEnvironment](https://jestjs.io/docs/en/configuration#testenvironment-string):
 
@@ -33,3 +36,15 @@ module.exports = {
 ## Datadog Agent 
 
 The [Datadog Agent](https://docs.datadoghq.com/agent/) needs to be accessible by the environment you're using to run your tests on.
+
+# Supported CI providers
+
+* [Appveyor](https://www.appveyor.com/)
+* [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/)
+* [BitBucket](https://bitbucket.org/)
+* [BuildKite](https://buildkite.com/)
+* [CircleCI](https://circleci.com/)
+* [Github Actions](https://github.com/features/actions)
+* [Gitlab](https://docs.gitlab.com/ee/ci/)
+* [Jenkins](https://www.jenkins.io/)
+* [TravisCI](https://travis-ci.org/)

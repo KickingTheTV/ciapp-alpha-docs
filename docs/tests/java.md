@@ -1,15 +1,16 @@
 ---
 layout: page
-title:  Java Test Instrumentation
+title:  Java
 categories: java test
 permalink: /tests/java
+parent: Test Instrumentation
 ---
 
 # Installation
 
-## Maven
+# Using Maven
 
-Add a new Maven profile in your root `pom.xml` configuring the Datadog Java agent dependency and the `javaagent` arg property, replacing `0.68.0` with the latest version of the agent: 
+Add a new Maven profile in your root `pom.xml` configuring the Datadog Java tracer dependency and the `javaagent` arg property, replacing `0.68.0` with the latest version of the tracer: 
 
 {% highlight xml %}
 <profile>
@@ -33,7 +34,7 @@ Add a new Maven profile in your root `pom.xml` configuring the Datadog Java agen
 </profile>
 {% endhighlight %}
 
-### Instrumenting your tests
+## Instrumenting your tests
 
 Configure the [`Maven Surefire Plugin`](https://maven.apache.org/surefire/maven-surefire-plugin/) and/or the [`Maven Failsafe Plugin`](https://maven.apache.org/surefire/maven-failsafe-plugin/) to use Datadog Java agent:
 
@@ -65,33 +66,33 @@ Configure the [`Maven Surefire Plugin`](https://maven.apache.org/surefire/maven-
 
 After this, you can run your tests using the `ci-app` profile, for example using the `mvn clean verify -Pci-app` command.
 
-## Gradle
+# Using Gradle
 
-Add the `ddJavaAgent` entry to the `configurations` task block and add the Datadog Java agent dependency, replacing `0.68.0` with the latest version of the agent.
+Add the `ddTracerAgent` entry to the `configurations` task block and add the Datadog Java tracer dependency, replacing `0.68.0` with the latest version of the tracer.
 
 {% highlight groovy %}
 configurations {
-    ddJavaAgent
+    ddTracerAgent
 }
 
 dependencies {
-    ddJavaAgent "com.datadoghq:dd-java-agent:0.68.0"
+    ddTracerAgent "com.datadoghq:dd-java-agent:0.68.0"
 }
 {% endhighlight %}
 
-### Instrumenting your tests
+## Instrumenting your tests
 
-Configure the `test` Gradle task by adding to the `jvmArgs` attribute the `-javaagent` argument targeting the Datadog Java agent based on the `configurations.ddJavaAgent` property.
+Configure the `test` Gradle task by adding to the `jvmArgs` attribute the `-javaagent` argument targeting the Datadog Java tracer based on the `configurations.ddTracerAgent` property.
 
 {% highlight groovy %}
 test {
-    jvmArgs = ["-javaagent:${configurations.ddJavaAgent.asPath}"]
+    jvmArgs = ["-javaagent:${configurations.ddTracerAgent.asPath}"]
 }
 {% endhighlight %}
 
 After this, you can run your tests as you normally do, for example using the `./gradlew cleanTest test --rerun-tasks` command.
 
-## Enabling
+# Enabling
 
 All configuration options below have system property and environment variable equivalents. If the same key type is set for both, the system property configuration takes priority. System properties can be set as JVM flags.
 
@@ -102,7 +103,7 @@ All configuration options below have system property and environment variable eq
 
 Additionally, all [Datadog Tracer configuration](https://docs.datadoghq.com/tracing/setup_overview/setup/java/?tab=containers#configuration) options can be used to during test phase.
 
-### Recommended configuration
+## Recommended configuration
 
 To improve the Datadog Java agent startup, follow the next recommended configuration:
 
@@ -123,36 +124,20 @@ The [Datadog Agent](https://docs.datadoghq.com/agent/) needs to be accessible by
 
 # Supported Test frameworks
 
-* JUnit 4.10+
-* JUnit 5.3+
-* TestNG 6.4+
+* [JUnit 4.10+](https://junit.org/junit4/)
+* [JUnit 5.3+](https://junit.org/junit5/)
+* [TestNG 6.4+](https://testng.org/doc/)
+
+Additionally, we support the test frameworks which are based on JUnit, such as [Spock Framework](http://spockframework.org/), [Cucumber-Junit](https://cucumber.io/docs/cucumber/api/), etc
 
 # Supported CI providers
 
-* Appveyor
-* Azure Pipelines
-* BitBucket
-* BuildKite
-* CircleCI
-* Github Actions
-* Gitlab
-* Jenkins
-* TravisCI
-
-# Troubleshooting
-
-## I don't see my tests in Datadog after installing the Datadog Java agent
-
-If you don't see any results in Datadog after following the [Java Test Instrumentation guide](#installation), check the following:
-
-**Have you started a Datadog Agent instance?**
-
-The Datadog Java agent needs a [Datadog Agent](https://docs.datadoghq.com/agent/) instance running and accessible from the environment where the tests are being executed to send the traces to Datadog.
-
-Additionally, `DD_AGENT_HOST` and `DD_TRACE_AGENT_PORT` options need to be configured properly in case the default values (`localhost`,`8126`) are not correct.  
-
-**Have you forwarded the required environment variables?**
-
-If you are executing your tests in a container, you need to forward several environment variables depending on your CI provider.
-
-You can find further information in [Running tests inside a container](common/tests_in_container) section.
+* [Appveyor](https://www.appveyor.com/)
+* [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/)
+* [BitBucket](https://bitbucket.org/)
+* [BuildKite](https://buildkite.com/)
+* [CircleCI](https://circleci.com/)
+* [Github Actions](https://github.com/features/actions)
+* [Gitlab](https://docs.gitlab.com/ee/ci/)
+* [Jenkins](https://www.jenkins.io/)
+* [TravisCI](https://travis-ci.org/)
