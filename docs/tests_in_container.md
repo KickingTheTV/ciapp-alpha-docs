@@ -2,14 +2,17 @@
 layout: page
 title:  Running tests inside a container
 categories: test container
-permalink: /common/tests_in_container
+permalink: /tests-in-container
+nav_order: 4
 ---
 
 # Running tests inside a container
 
 If you are running your tests inside a container, forward the following environment variables depending on your CI provider, so the Datadog Tracer can autodetect the build information.
 
-### Appveyor
+Additionally, notice that you also need to forward all Datadog environment variables used to configure the Datadog Tracer. 
+
+### [Appveyor](https://www.appveyor.com/docs/environment-variables/)
 
 - APPVEYOR
 - APPVEYOR_BUILD_ID
@@ -22,7 +25,7 @@ If you are running your tests inside a container, forward the following environm
 - APPVEYOR_REPO_TAG_NAME
 - APPVEYOR_PULL_REQUEST_HEAD_REPO_BRANCH
 
-### Azure Pipelines
+### [Azure Pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops)
 
 - TF_BUILD
 - BUILD_DEFINITIONNAME
@@ -41,7 +44,7 @@ If you are running your tests inside a container, forward the following environm
 - SYSTEM_PULLREQUEST_SOURCEBRANCH
 - SYSTEM_PULLREQUEST_SOURCECOMMITID
 
-### BitBucket
+### [BitBucket](https://support.atlassian.com/bitbucket-cloud/docs/variables-and-secrets/)
 
 - BITBUCKET_PIPELINE_UUID
 - BITBUCKET_BUILD_NUMBER
@@ -52,7 +55,7 @@ If you are running your tests inside a container, forward the following environm
 - BITBUCKET_BRANCH
 - BITBUCKET_TAG
 
-### BuildKite
+### [BuildKite](https://buildkite.com/docs/pipelines/environment-variables)
 
 - BUILDKITE
 - BUILDKITE_PIPELINE_SLUG
@@ -66,7 +69,7 @@ If you are running your tests inside a container, forward the following environm
 - BUILDKITE_BRANCH
 - BUILDKITE_TAG
 
-### CircleCI
+### [CircleCI](https://circleci.com/docs/2.0/env-vars/#built-in-environment-variables)
 
 - CIRCLECI
 - CIRCLE_PROJECT_REPONAME
@@ -79,7 +82,7 @@ If you are running your tests inside a container, forward the following environm
 - CIRCLE_BRANCH
 - CIRCLE_TAG
 
-### Github Actions
+### [Github Actions](https://docs.github.com/en/free-pro-team@latest/actions/reference/environment-variables#default-environment-variables)
 
 - GITHUB_ACTION
 - GITHUB_RUN_ID
@@ -91,7 +94,7 @@ If you are running your tests inside a container, forward the following environm
 - GITHUB_HEAD_REF
 - GITHUB_REF
 
-### GitLab
+### [GitLab](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html)
 
 - GITLAB_CI
 - CI_PIPELINE_ID
@@ -105,7 +108,7 @@ If you are running your tests inside a container, forward the following environm
 - CI_COMMIT_BRANCH
 - CI_COMMIT_TAG
 
-### Jenkins
+### [Jenkins](https://wiki.jenkins.io/display/JENKINS/Building+a+software+project)
 
 - JENKINS_URL
 - BUILD_TAG
@@ -118,7 +121,7 @@ If you are running your tests inside a container, forward the following environm
 - GIT_COMMIT
 - GIT_BRANCH
 
-### TravisCI
+### [TravisCI](https://docs.travis-ci.com/user/environment-variables/#default-environment-variables)
 
 - TRAVIS
 - TRAVIS_BUILD_ID
