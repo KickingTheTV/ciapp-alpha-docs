@@ -10,11 +10,11 @@ parent: Test Instrumentation
 
 Follow the official installation [guide](https://docs.datadoghq.com/tracing/setup_overview/setup/python/) for `dd-trace-py`.
 
-# Pytest Instrumentation
+## Pytest Instrumentation
 
 The pytest integration traces test executions.
 
-## Enabling
+### Enabling
 
 Enable traced execution of tests using ``pytest`` runner by
 running ``pytest --ddtrace`` or by modifying any configuration
@@ -25,7 +25,7 @@ file read by pytest (``pytest.ini``, ``setup.cfg``, ...).
 ddtrace = 1
 {% endhighlight %}
 
-## Global Configuration
+### Global Configuration
 
 * `ddtrace.config.pytest["service"]`: The service name reported by default for pytest traces.
    This option can also be set with the ``DD_PYTEST_SERVICE`` environment
@@ -41,7 +41,7 @@ ddtrace = 1
 The [Datadog Agent](https://docs.datadoghq.com/agent/) needs to be accessible by the environment you're using to run your tests on.
 
 
-# Supported CI providers
+## Supported CI providers
 
 * [Appveyor](https://www.appveyor.com/)
 * [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/)

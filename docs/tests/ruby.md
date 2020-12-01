@@ -11,7 +11,7 @@ parent: Test Instrumentation
 Follow the official installation [guide](https://docs.datadoghq.com/tracing/setup_overview/setup/ruby/) for `dd-trace-rb`.
 
 
-# Cucumber Instrumentation
+## Cucumber Instrumentation
 
 Cucumber integration will trace all executions of scenarios and steps when using `cucumber` framework.
 
@@ -50,12 +50,8 @@ Where `options` is an optional `Hash` that accepts the following parameters:
 
 The lastest documentation can be found [here](https://github.com/DataDog/dd-trace-rb/blob/master/docs/GettingStarted.md#cucumber).
 
-## Datadog Agent
 
-The [Datadog Agent](https://docs.datadoghq.com/agent/) needs to be accessible by the environment you're using to run your tests on.
-
-
-# RSpec Instrumentation
+## RSpec Instrumentation
 
 RSpec integration will trace all executions of example groups and examples when using `rspec` test framework.
 
@@ -87,7 +83,7 @@ The lastest documentation can be found [here](https://github.com/DataDog/dd-trac
 The [Datadog Agent](https://docs.datadoghq.com/agent/) needs to be accessible by the environment you're using to run your tests on.
 
 
-# Supported CI providers
+## Supported CI providers
 
 * [Appveyor](https://www.appveyor.com/)
 * [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/)
