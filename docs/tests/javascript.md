@@ -10,27 +10,28 @@ parent: Test Instrumentation
 
 ## Jest Instrumentation
 
-The Datadog Javascript Tracer now exports a function `getEnvironment` to wrap your [testEnvironment](https://jestjs.io/docs/en/configuration#testenvironment-string):
+If you have not installed `dd-trace` yet you need to do it first:
+
+```bash
+yarn add --dev dd-trace
+```
+
+You need to configure a custom [testEnvironment](https://jestjs.io/docs/en/configuration#testenvironment-string) in your `jest.config.js` or however you are configuring [jest](https://jestjs.io/docs/en/configuration):
 
 {% highlight javascript %}
-// testEnvironment.js in your repository's root folder
-const { getEnvironment } = require('dd-trace/packages/datadog-plugin-jest/src/index')
-
-// it can be jest-environment-jsdom for ui tests or any other environment you use
-const JestEnvironment = require('jest-environment-node') 
-
-module.exports = getEnvironment(JestEnvironment)
-{% endhighlight %}
-
-
-Then you need to configure `testEnvironment` in your `jest.config.js` or however you normally configure [jest](https://jestjs.io/docs/en/configuration):
-
-{% highlight javascript %}
+// jest.config.js
 module.exports = {
   // ...
-  testEnvironment: '<rootDir>/testEnvironment.js', // refers to the file above
+  testEnvironment: '<rootDir>/testEnvironment.js', // refers to the file below
   // ...
 }
+{% endhighlight %}
+
+And in `testEnvironment.js` in your repository's root folder:
+{% highlight javascript %}
+require('dd-trace').init()
+// it can also be jest-environment-jsdom
+module.exports = require('jest-environment-node') 
 {% endhighlight %}
 
 ## Datadog Agent 
