@@ -12,20 +12,20 @@ parent: Test Instrumentation
 
 Add 'dd-sdk-swift-testing' package to your project. It is located at https://github.com/DataDog/dd-sdk-swift-testing.
 Then link your test targets with the library `DatadogSDKTesting` from the package. 
-If you are doing UITesting, your app running the UItests should also be linked with this library
+If you are doing UITesting, your app running the UItests should also be linked with this library.
 
 ## Binary linking
 
-Download the project at  [repository](https://github.com/DataDog/dd-sdk-swift-testing)
-In terminal go to the project folder and run `make release`, the resulting framework `DatadogSDKTesting.xcframework` can be found at : `./build/xcframework`
-Then you can copy and link your test targets with the XCFramework. If you are doing UITesting, your app running the UItests should also be linked with this framework
+Download the project at [dd-sdk-swift-testing](https://github.com/DataDog/dd-sdk-swift-testing)
+In a terminal go to the project folder and run `make release`, the resulting framework `DatadogSDKTesting.xcframework` can be found at `./build/xcframework`
+Then you can copy and link your test targets with the XCFramework. If you are doing UITesting, your app running the UItests should also be linked with this framework.
 
 ## Enabling
 
 ### Datadog Confguration
 
 
-To enable testing instrumentation you must dd the following environment variables to your test target. For UITests environment variables only need to be set in the test target, since the framework automatically injects these values to the application.
+To enable testing instrumentation you must add the following environment variables to your test target. For UITests environment variables only need to be set in the test target, since the framework automatically injects these values to the application.
 
 | Key                      | Value                       |
 |--------------------------|-----------------------------|
@@ -195,10 +195,10 @@ Tests, network requests and application logs will be instrumented automatically.
 
 ### Disabling Auto Instrumentation
 
-The framework automatically tries to capture the maximum information, but for some situations or tests it can be counter-productive. You can disable some of the autoinstrumentation for all the tests, by setting the following environment variables. 
+The framework automatically tries to capture the most information possible, but for some situations or tests it can be counter-productive. You can disable some of the autoinstrumentation for all the tests by setting the following environment variables:
 
->Boolean variables can use any of: "1","0","true","false", "YES", "NO"
->String List variables accepts a list of elements separated by "," or ";"
+>Boolean variables can use any of: "1", "0", "true", "false", "YES", "NO"
+>String list variables accept a list of elements separated by "," or ";"
 
 
 {% highlight txt %}
@@ -214,7 +214,7 @@ For Network autoinstrumentation there are other settings that you can configure
 {% highlight txt %}
 DD_DISABLE_HEADERS_INJECTION # Disables all injection of tracing headers (Boolean)
 DD_INSTRUMENTATION_EXTRA_HEADERS # Specific extra headers that you want the tool to log (String List)
-DD_EXCLUDED_URLS # Urls that you dont want to log or inject headers into(String List)
+DD_EXCLUDED_URLS # Urls that you don't want to log or inject headers into (String List)
 DD_ENABLE_RECORD_PAYLOAD # It enables reporting a subset (512 bytes) of the payloads in requests and responses (Boolean)
 {% endhighlight %}
 
