@@ -40,4 +40,4 @@ Test instrumentations requirements.
 
 If you are executing your tests in a container, you need to forward several environment variables depending on your CI provider.
 
-You can find further information in [Running tests inside a container](/tests-in-container) section.
+You can find further information in [Running tests inside a container](/ciapp-alpha-docs/tests-in-container) section.
