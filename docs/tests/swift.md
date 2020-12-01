@@ -10,16 +10,16 @@ parent: Test Instrumentation
 
 ## Using SPM
 
-Add `dd-sdk-swift-testing package to your project. It is located at https://github.com/DataDog/dd-sdk-swift-testing.
-Then link your test targets with the library `DatadogSDKTesting from the package.
-If you are doing UITesting, your app running the UItests should also be linked with this library.
+Add `dd-sdk-swift-testing` package to your project. It is located at https://github.com/DataDog/dd-sdk-swift-testing.
+Then link your test targets with the library `DatadogSDKTesting` from the package.
+If you are running UITests, your app running the tests should also be linked with this library.
 
 ## Binary linking
 
 Download the project at [dd-sdk-swift-testing](https://github.com/DataDog/dd-sdk-swift-testing)
-In a terminal go to the project folder and run `make release`, the resulting framework `DatadogSDKTesting.xcframework can be found at `./build/xcframework`
+In a terminal go to the project folder and run `make release`, the resulting framework `DatadogSDKTesting.xcframework` can be found at `./build/xcframework`
 Then you can copy and link your test targets with the XCFramework.
-If you are doing UITesting, your app running the UItests should also be linked with this framework.
+If you are running UITests, your app running the tests should also be linked with this library.
 
 ## Enabling
 
@@ -38,7 +38,7 @@ You may want to set other environment variables also:
 | Key                      | Value                       |
 |--------------------------|-----------------------------|
 |DD_ENV              |`<The environment you want to report>`              |
-|DD_SERVICE              |`<The name of the service you want to report>              |
+|DD_SERVICE              |`<The name of the service you want to report>`              |
 
 
 ### CI configuration
@@ -192,7 +192,8 @@ Depending on your CI service, you must also set the following environment variab
 
 ## Running tests 
 
-After installation, you can run your tests as you normally do, for example using the `xcodebuild test command. 
+After installation, you can run your tests as you normally do, for example using the `xcodebuild test` command. 
+
 Tests, network requests and application logs will be instrumented automatically.
 
 ## Extra configuration
@@ -201,7 +202,8 @@ Tests, network requests and application logs will be instrumented automatically.
 
 The framework automatically tries to capture the most information possible, but for some situations or tests it can be counter-productive. You can disable some of the autoinstrumentation for all the tests by setting the following environment variables:
 
-> `Boolean` variables can use any of: `1`, `0`, `true`, `false`, `YES`, `NO`
+> `Boolean` variables can use any of: `1`, `0`, `true`, `false`, `YES` or `NO` 
+
 > `String` list variables accept a list of elements separated by `,` or `;`
 
 
@@ -217,9 +219,10 @@ For Network autoinstrumentation there are other settings that you can configure
 
 {% highlight txt %}
 DD_DISABLE_HEADERS_INJECTION # Disables all injection of tracing headers (Boolean)
-DD_INSTRUMENTATION_EXTRA_HEADERS # Specific extra headers that you want the tool to log (String List)
+DD_INSTRUMENTATION_EXTRA_HEADERS # Specific extra headers that you want to log (String List)
 DD_EXCLUDED_URLS # Urls that you don't want to log or inject headers into (String List)
-DD_ENABLE_RECORD_PAYLOAD # It enables reporting a subset (512 bytes) of the payloads in requests and responses (Boolean)
+DD_ENABLE_RECORD_PAYLOAD # It enables reporting a subset (512 bytes) of the payloads in 
+                        requests and responses (Boolean)
 {% endhighlight %}
 
 You can also disable or enable specific autoinstrumentation in some of the tests from Swift or Objective-C by importing the module `DatadogSDKTesting` and using the class: `DDInstrumentationControl`.
