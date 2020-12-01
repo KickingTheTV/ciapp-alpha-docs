@@ -31,14 +31,14 @@ To enable testing instrumentation you must add the following environment variabl
 | Key                      | Value                       |
 |--------------------------|-----------------------------|
 | DD_TEST_RUNNER              |true              |
-|DATADOG_CLIENT_TOKEN              |<your current Datadog Client Token>              |
+|DATADOG_CLIENT_TOKEN              | `<your current Datadog Client Token>`              |
 
 You may want to set other environment variables also:
 
 | Key                      | Value                       |
 |--------------------------|-----------------------------|
-|DD_ENV              |<The environment you want to report>              |
-|DD_SERVICE              |<The name of the service you want to report>              |
+|DD_ENV              |`<The environment you want to report>`              |
+|DD_SERVICE              |`<The name of the service you want to report>              |
 
 
 ### CI configuration
@@ -201,8 +201,8 @@ Tests, network requests and application logs will be instrumented automatically.
 
 The framework automatically tries to capture the most information possible, but for some situations or tests it can be counter-productive. You can disable some of the autoinstrumentation for all the tests by setting the following environment variables:
 
->Boolean variables can use any of: "1", "0", "true", "false", "YES", "NO"
->String list variables accept a list of elements separated by "," or ";"
+> `Boolean` variables can use any of: `1`, `0`, `true`, `false`, `YES`, `NO`
+> `String` list variables accept a list of elements separated by `,` or `;`
 
 
 {% highlight txt %}
@@ -222,7 +222,7 @@ DD_EXCLUDED_URLS # Urls that you don't want to log or inject headers into (Strin
 DD_ENABLE_RECORD_PAYLOAD # It enables reporting a subset (512 bytes) of the payloads in requests and responses (Boolean)
 {% endhighlight %}
 
-You can also disable or enable specific autoinstrumentation in some of the tests from Swift or Objective-C by importing the module `DatadogSDKTesting and using the class: `DDInstrumentationControl`.
+You can also disable or enable specific autoinstrumentation in some of the tests from Swift or Objective-C by importing the module `DatadogSDKTesting` and using the class: `DDInstrumentationControl`.
 
 
 ## Supported versions
