@@ -8,7 +8,7 @@ parent: Test Instrumentation
 
 # Installation
 
-# Using Maven
+## Using Maven
 
 Add a new Maven profile in your root `pom.xml` configuring the Datadog Java tracer dependency and the `javaagent` arg property, replacing `0.68.0` with the latest version of the tracer: 
 
@@ -34,7 +34,7 @@ Add a new Maven profile in your root `pom.xml` configuring the Datadog Java trac
 </profile>
 {% endhighlight %}
 
-## Instrumenting your tests
+### Instrumenting your tests
 
 Configure the [`Maven Surefire Plugin`](https://maven.apache.org/surefire/maven-surefire-plugin/) and/or the [`Maven Failsafe Plugin`](https://maven.apache.org/surefire/maven-failsafe-plugin/) to use Datadog Java agent:
 
@@ -66,7 +66,7 @@ Configure the [`Maven Surefire Plugin`](https://maven.apache.org/surefire/maven-
 
 After this, you can run your tests using the `ci-app` profile, for example using the `mvn clean verify -Pci-app` command.
 
-# Using Gradle
+## Using Gradle
 
 Add the `ddTracerAgent` entry to the `configurations` task block and add the Datadog Java tracer dependency, replacing `0.68.0` with the latest version of the tracer.
 
@@ -80,7 +80,7 @@ dependencies {
 }
 {% endhighlight %}
 
-## Instrumenting your tests
+### Instrumenting your tests
 
 Configure the `test` Gradle task by adding to the `jvmArgs` attribute the `-javaagent` argument targeting the Datadog Java tracer based on the `configurations.ddTracerAgent` property.
 
@@ -92,7 +92,7 @@ test {
 
 After this, you can run your tests as you normally do, for example using the `./gradlew cleanTest test --rerun-tasks` command.
 
-# Enabling
+## Enabling
 
 All configuration options below have system property and environment variable equivalents. If the same key type is set for both, the system property configuration takes priority. System properties can be set as JVM flags.
 
@@ -103,7 +103,7 @@ All configuration options below have system property and environment variable eq
 
 Additionally, all [Datadog Tracer configuration](https://docs.datadoghq.com/tracing/setup_overview/setup/java/?tab=containers#configuration) options can be used to during test phase.
 
-## Recommended configuration
+### Recommended configuration
 
 To improve the Datadog Java agent startup, follow the next recommended configuration:
 
@@ -122,7 +122,7 @@ You can change the test integration from `JUnit` to `TestNG` modifying the corre
 
 The [Datadog Agent](https://docs.datadoghq.com/agent/) needs to be accessible by the environment you're using to run your tests on.
 
-# Supported Test frameworks
+## Supported Test frameworks
 
 * [JUnit 4.10+](https://junit.org/junit4/)
 * [JUnit 5.3+](https://junit.org/junit5/)
@@ -130,7 +130,7 @@ The [Datadog Agent](https://docs.datadoghq.com/agent/) needs to be accessible by
 
 Additionally, we support the test frameworks which are based on JUnit, such as [Spock Framework](http://spockframework.org/), [Cucumber-Junit](https://cucumber.io/docs/cucumber/api/), etc
 
-# Supported CI providers
+## Supported CI providers
 
 * [Appveyor](https://www.appveyor.com/)
 * [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/)
