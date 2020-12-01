@@ -10,6 +10,8 @@ nav_order: 4
 
 If you are running your tests inside a container, forward the following environment variables depending on your CI provider, so the Datadog Tracer can autodetect the build information.
 
+Additionally, notice that you also need to forward all Datadog environment variables used to configure the Datadog Tracer. 
+
 ### [Appveyor](https://www.appveyor.com/docs/environment-variables/)
 
 - APPVEYOR

@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Home
+title: Overview
 permalink: /
 nav_order: 1
 ---
@@ -24,8 +24,6 @@ Some of those insights are:
 * Failure rate of a certain build.
 * Stage breakdown.
 
-You can find an example of these build insights [here](https://app.datadoghq.com/ci/build-pipeline-dashboard/DataDog%2Flogs-backend?env=prod&service=gitlab-ci&branch=prod&repoUrl=https%3A%2F%2Fgitlab.ddbuild.io%2FDataDog%2Flogs-backend.git) for one repository that is currently reporting to Datadog.
-
 ## Tracing your tests
 
 You will obtain different insights about your tests in the `Test Plans` and `Test Executions` sections under the CI menu in Datadog once your tests had been instrumented.
@@ -37,11 +35,9 @@ Some of those insights for a certain commit are:
 * Wall time clock duration for the test phase.
 * Avg delta duration change between commits.
 
-You can find an example of these test insights [here](https://app.datadoghq.com/ci/test-dashboard/logs-backend-tests?env=ci&branch=prod&repoUrl=https%3A%2F%2Fgitlab.ddbuild.io%2FDataDog%2Flogs-backend.git) for one repository that is currently reporting to Datadog.
-
 ## Contact
 
 We love your feedback! 
 
-Do not hesitate to contact us on the [#ci-app](https://dd.slack.com/archives/C016LJLRZQ9) Slack channel if you have some questions or suggestions. 
+Do not hesitate to contact us at [ci-team@datadoghq.com](mailto:ci-team@datadoghq.com) if you have some questions or suggestions. 
  
