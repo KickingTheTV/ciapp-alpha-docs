@@ -57,7 +57,6 @@ Depending on your CI service, you must also set the following environment variab
 |BUILD_ID               |$(BUILD_ID)               |
 |BUILD_NUMBER           |$(BUILD_NUMBER)           |
 |BUILD_URL           |$(BUILD_URL)           |
-|JOB_URL              |$(JOB_URL)              |
 
 
 #### CircleCI
