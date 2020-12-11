@@ -18,12 +18,12 @@ The Datadog Tracer may need a [Datadog Agent](https://docs.datadoghq.com/agent/)
 
 Additionally, `DD_AGENT_HOST` and `DD_TRACE_AGENT_PORT` options need to be configured properly in case the Datadog Agent is not using its default url (`localhost:8126`).
 
-Build instrumentation requirements.
+Pipeline instrumentation requirements.
 
-| Build Instrumentation | Require Datadog Agent |
-|:---------------------:|:---------------------:|
-| GitLab                |           N           |
-| Jenkins               |           Y           |
+| Pipeline Instrumentation | Require Datadog Agent |
+|:------------------------:|:---------------------:|
+| GitLab                   |           N           |
+| Jenkins                  |           Y           |
 
 Test instrumentations requirements.
 
