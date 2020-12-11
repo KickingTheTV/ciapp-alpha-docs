@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Build Instrumentation
+title: Pipeline Instrumentation
 nav_order: 2
 has_children: true
-permalink: /build-instrumentation
+permalink: /pipeline-instrumentation
 ---
 
-# Build Instrumentation
+# Pipeline Instrumentation
 
 Detail instructions of how to instrument your CI provider
 {: .fs-6 .fw-300 }

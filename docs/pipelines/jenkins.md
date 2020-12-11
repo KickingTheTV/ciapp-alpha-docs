@@ -3,7 +3,7 @@ layout: page
 title:  Jenkins
 categories: ci jenkins
 permalink: /ciprovider/jenkins
-parent: Build Instrumentation
+parent: Pipeline Instrumentation
 ---
 
 # Installation
@@ -19,7 +19,7 @@ APM Traces feature is only available if the `Datadog Agent` mode is selected.
 
 ## Enabling
 
-Traces collection UI configuration is hidden for the general public. 
+Traces collection UI configuration is hidden for the general public.
 
 To enable this feature, you need to activate it manually following the next steps:
 
