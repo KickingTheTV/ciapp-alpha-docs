@@ -1,8 +1,8 @@
 title: Datadog - CI/CD
 description: >- # this means to ignore newlines until "baseurl:"
-  Find here how to setup the Datadog tracer for your tests. This guide is only valid 
+  Find here how to setup the Datadog tracer for your tests. This guide is only valid
   during the alpha phase.
 # Build settings
+url: https://datadoghq.dev
 remote_theme: pmarsceill/just-the-docs
 aux_links: ""
-url: "https://datadoghq.dev"

@@ -10,10 +10,10 @@ To enable traces for your Gitlab CI pipelines you need to configure the followin
 - Job Events
 - Pipeline Events
 
-![Webhooks Screenshot](/assets/gitlab-webhooks.png)
+![Webhooks Screenshot](/ciapp-alpha-docs/assets/gitlab-webhooks.png)
 
-Use this URL https://webhooks-http-intake.logs.datadoghq.com/v1/input/(api-key)
-and if you do not have an API key you can create one at https://app.datadoghq.com/account/settings#api
+Use this URL `https://webhooks-http-intake.logs.datadoghq.com/v1/input/(api-key)`
+and if you do not have an API key you can create one [here](https://app.datadoghq.com/account/settings#api)
 
 _Optionally_, you can pass these query parameters in the URL:
 - __env__: Sets the environment at Datadog for traces for this GitLab instance. Empty by default, but you can set this if your organization has more than one infra for GitLab.
