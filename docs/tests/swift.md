@@ -11,15 +11,18 @@ parent: Test Instrumentation
 ## Using SPM
 
 Add `dd-sdk-swift-testing` package to your project. It is located at https://github.com/DataDog/dd-sdk-swift-testing.
+
 Then link your test targets with the library `DatadogSDKTesting` from the package.
+
 If you are running UITests, your app running the tests should also be linked with this library.
 
 ## Binary linking
 
-Download the project at [dd-sdk-swift-testing](https://github.com/DataDog/dd-sdk-swift-testing)
-In a terminal go to the project folder and run `make release`, the resulting framework `DatadogSDKTesting.xcframework` can be found at `./build/xcframework`
-Then you can copy and link your test targets with the XCFramework.
+Download and decompress `DatadogSDKTesting.zip` from the release page.Then you can copy and link your test targets with the resulting  XCFramework.
+
 If you are running UITests, your app running the tests should also be linked with this library.
+
+> Additionally you can build the XCFramework from source code, download the project at [dd-sdk-swift-testing](https://github.com/DataDog/dd-sdk-swift-testing)  and run `make release`, the resulting framework `DatadogSDKTesting.xcframework` can be found at `./build/xcframework`
 
 ## Enabling
 
@@ -54,9 +57,10 @@ Depending on your CI service, you must also set the following environment variab
 |WORKSPACE              |$(WORKSPACE)              |
 |GIT_BRANCH             |$(GIT_BRANCH)             |
 |JENKINS_URL            |$(JENKINS_URL)            |
-|BUILD_ID               |$(BUILD_ID)               |
+|BUILD_TAG               |$(BUILD_TAG)               |
 |BUILD_NUMBER           |$(BUILD_NUMBER)           |
 |BUILD_URL           |$(BUILD_URL)           |
+|JOB_NAME |$(JOB_NAME) |
 
 
 #### CircleCI
@@ -70,6 +74,10 @@ Depending on your CI service, you must also set the following environment variab
 |CIRCLECI                 |$(CIRCLECI)                 |
 |CIRCLE_BUILD_NUM         |$(CIRCLE_BUILD_NUM)         |
 |CIRCLE_BUILD_URL         |$(CIRCLE_BUILD_URL)         |
+|CIRCLE_WORKFLOW_ID |$(CIRCLE_WORKFLOW_ID) |
+|CIRCLE_PROJECT_REPONAME |$(CIRCLE_PROJECT_REPONAME) |
+|CIRCLE_TAG |$(CIRCLE_TAG) |
+|CIRCLE_BRANCH |$(CIRCLE_BRANCH) |
 
 
 #### GitLab CI
@@ -87,6 +95,7 @@ Depending on your CI service, you must also set the following environment variab
 |CI_PIPELINE_ID         |$(CI_PIPELINE_ID)         |
 |CI_PIPELINE_IID         |$(CI_PIPELINE_IID)         |
 |CI_PIPELINE_URL         |$(CI_PIPELINE_URL)         |
+|CI_PROJECT_PATH |$(CI_PROJECT_PATH) |
 
 
 #### Travis
@@ -97,6 +106,7 @@ Depending on your CI service, you must also set the following environment variab
 |TRAVIS_BUILD_DIR           |$(TRAVIS_BUILD_DIR)           |
 |TRAVIS                     |$(TRAVIS)                     |
 |TRAVIS_REPO_SLUG           |$(TRAVIS_REPO_SLUG)           |
+|TRAVIS_PULL_REQUEST_SLUG |$(TRAVIS_PULL_REQUEST_SLUG) |
 |TRAVIS_BUILD_ID            |$(TRAVIS_BUILD_ID)            |
 |TRAVIS_BUILD_NUMBER        |$(TRAVIS_BUILD_NUMBER)        |
 |TRAVIS_PULL_REQUEST_BRANCH |$(TRAVIS_PULL_REQUEST_BRANCH) |
@@ -115,6 +125,8 @@ Depending on your CI service, you must also set the following environment variab
 |GITHUB_REPOSITORY |$(GITHUB_REPOSITORY) |
 |GITHUB_RUN_ID     |$(GITHUB_RUN_ID)     |
 |GITHUB_RUN_NUMBER |$(GITHUB_RUN_NUMBER) |
+|GITHUB_WORKFLOW |$(GITHUB_WORKFLOW) |
+|GITHUB_HEAD_REF |$(GITHUB_HEAD_REF) |
 
 #### Buildkite
 
@@ -128,6 +140,9 @@ Depending on your CI service, you must also set the following environment variab
 |BUILDKITE_BUILD_ID            |$(BUILDKITE_BUILD_ID)            |
 |BUILDKITE_BUILD_NUMBER        |$(BUILDKITE_BUILD_NUMBER)        |
 |BUILDKITE_BUILD_URL           |$(BUILDKITE_BUILD_URL)           |
+|BUILDKITE_PIPELINE_SLUG |$(BUILDKITE_PIPELINE_SLUG) |
+|BUILDKITE_JOB_ID |$(BUILDKITE_JOB_ID) |
+|BUILDKITE_TAG |$(BUILDKITE_TAG) |
 
 #### Bitbucket Pipelines
 
@@ -139,20 +154,22 @@ Depending on your CI service, you must also set the following environment variab
 |BITBUCKET_BRANCH         |$(BITBUCKET_BRANCH)              |
 |BITBUCKET_BUILD_NUMBER   |$(BITBUCKET_BUILD_NUMBER)        |
 |BITBUCKET_PIPELINE_UUID   |$(BITBUCKET_PIPELINE_UUID)        |
+|BITBUCKET_REPO_FULL_NAME |$(BITBUCKET_REPO_FULL_NAME) |
+|BITBUCKET_TAG |$(BITBUCKET_TAG) |
 
 #### AppVeyor
 
-| Key                                      | Value                                       |
-| ---------------------------------------- | ------------------------------------------- |
-|APPVEYOR                   |$(APPVEYOR)                   |
-|APPVEYOR_REPO_COMMIT                   |$(APPVEYOR_REPO_COMMIT)                   |
-|APPVEYOR_REPO_NAME                     |$(APPVEYOR_REPO_NAME)                     |
-|APPVEYOR_BUILD_FOLDER                  |$(APPVEYOR_BUILD_FOLDER)                  |
-|APPVEYOR_PULL_REQUEST_HEAD_REPO_BRANCH |$(APPVEYOR_PULL_REQUEST_HEAD_REPO_BRANCH) |
-|APPVEYOR_REPO_BRANCH                   |$(APPVEYOR_REPO_BRANCH)                   |
-|APPVEYOR_BUILD_ID                      |$(APPVEYOR_BUILD_ID)                      |
-|APPVEYOR_BUILD_NUMBER                  |$(APPVEYOR_BUILD_NUMBER)                  |
-|APPVEYOR_PROJECT_SLUG                  |$(APPVEYOR_PROJECT_SLUG)                  |
+| Key                                    | Value                                     |
+| -------------------------------------- | ----------------------------------------- |
+| APPVEYOR                               | $(APPVEYOR)                               |
+| APPVEYOR_REPO_COMMIT                   | $(APPVEYOR_REPO_COMMIT)                   |
+| APPVEYOR_REPO_NAME                     | $(APPVEYOR_REPO_NAME)                     |
+| APPVEYOR_BUILD_FOLDER                  | $(APPVEYOR_BUILD_FOLDER)                  |
+| APPVEYOR_PULL_REQUEST_HEAD_REPO_BRANCH | $(APPVEYOR_PULL_REQUEST_HEAD_REPO_BRANCH) |
+| APPVEYOR_REPO_BRANCH                   | $(APPVEYOR_REPO_BRANCH)                   |
+| APPVEYOR_BUILD_ID                      | $(APPVEYOR_BUILD_ID)                      |
+| APPVEYOR_BUILD_NUMBER                  | $(APPVEYOR_BUILD_NUMBER)                  |
+| APPVEYOR_REPO_TAG_NAME                 | $(APPVEYOR_REPO_TAG_NAME)                 |
 
 #### Azure Pipelines
 
@@ -162,14 +179,16 @@ Depending on your CI service, you must also set the following environment variab
 |BUILD_SOURCEVERSION                |$(BUILD_SOURCEVERSION)                |
 |BUILD_REPOSITORY_URI               |$(BUILD_REPOSITORY_URI)               |
 |BUILD_SOURCESDIRECTORY             |$(BUILD_SOURCESDIRECTORY)             |
-|BUILD_SOURCEBRANCHNAME             |$(BUILD_SOURCEBRANCHNAME)             |
 |BUILD_SOURCEBRANCH                 |$(BUILD_SOURCEBRANCH)                 |
 |BUILD_BUILDID                      |$(BUILD_BUILDID)                      |
-|BUILD_BUILDNUMBER                  |$(BUILD_BUILDNUMBER)                  |
-|SYSTEM_TEAMPROJECT                 |$(SYSTEM_TEAMPROJECT)                 |
-|SYSTEM_TEAMFOUNDATIONCOLLECTIONURI |$(SYSTEM_TEAMFOUNDATIONCOLLECTIONURI) |
+|BUILD_DEFINITIONNAME |$(BUILD_DEFINITIONNAME) |
+|SYSTEM_TEAMPROJECTID                 |$(SYSTEM_TEAMPROJECTID)                 |
+|SYSTEM_TEAMFOUNDATIONSERVERURI |$(SYSTEM_TEAMFOUNDATIONSERVERURI) |
 |SYSTEM_PULLREQUEST_SOURCECOMMITID |$(SYSTEM_PULLREQUEST_SOURCECOMMITID) |
 |SYSTEM_PULLREQUEST_SOURCEBRANCH |$(SYSTEM_PULLREQUEST_SOURCEBRANCH) |
+|SYSTEM_PULLREQUEST_SOURCEREPOSITORYURI |$(SYSTEM_PULLREQUEST_SOURCEREPOSITORYURI) |
+|SYSTEM_JOBID |$(SYSTEM_JOBID) |
+|SYSTEM_TASKINSTANCEID |$(SYSTEM_TASKINSTANCEID) |
 
 #### Bitrise
 
@@ -202,14 +221,14 @@ Tests, network requests and application logs will be instrumented automatically.
 The framework automatically tries to capture the most information possible, but for some situations or tests it can be counter-productive. You can disable some of the autoinstrumentation for all the tests by setting the following environment variables:
 
 > `Boolean` variables can use any of: `1`, `0`, `true`, `false`, `YES` or `NO` 
-
+>
 > `String` list variables accept a list of elements separated by `,` or `;`
-
 
 {% highlight txt %}
 DD_DISABLE_NETWORK_INSTRUMENTATION # Disables all network instrumentation (Boolean)
 DD_DISABLE_STDOUT_INSTRUMENTATION # Disables all stdout instrumentation (Boolean)
 DD_DISABLE_STDERR_INSTRUMENTATION # Disables all stderr instrumentation (Boolean)
+DD_DISABLE_SDKIOS_INTEGRATION # Disables integration with dd-sdk-ios logs and traces (Boolean)
 {% endhighlight %}
 
 ### Network Auto Instrumentation
