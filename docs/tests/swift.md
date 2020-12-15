@@ -88,8 +88,7 @@ Depending on your CI service, you must also set the following environment variab
 |CI_REPOSITORY_URL  |$(CI_REPOSITORY_URL)  |
 |CI_PROJECT_DIR     |$(CI_PROJECT_DIR)     |
 |CI_COMMIT_BRANCH   |$(CI_COMMIT_BRANCH)   |
-|CI_COMMIT_REF_NAME |$(CI_COMMIT_REF_NAME) |
-|CI_COMMIT_REF_NAME |$(CI_COMMIT_TAG) |
+|CI_COMMIT_TAG |$(CI_COMMIT_TAG) |
 |GITLAB_CI          |$(GITLAB_CI)          |
 |CI_JOB_URL         |$(CI_JOB_URL)         |
 |CI_PIPELINE_ID         |$(CI_PIPELINE_ID)         |
