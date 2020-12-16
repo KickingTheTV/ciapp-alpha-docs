@@ -200,7 +200,6 @@ Depending on your CI service, you must also set the following environment variab
 |BITRISE_BUILD_SLUG             |$(BITRISE_BUILD_SLUG)             |
 |BITRISE_BUILD_NUMBER                 |$(BITRISE_BUILD_NUMBER)                 |
 |BITRISE_BUILD_URL                      |$(BITRISE_BUILD_URL)                      |
-|BITRISE_APP_URL                  |$(BITRISE_APP_URL)                  |
 |BITRISE_GIT_BRANCH                 |$(BITRISE_GIT_BRANCH)                 |
 |BITRISEIO_GIT_BRANCH_DEST |$(BITRISEIO_GIT_BRANCH_DEST) |
 |BITRISE_GIT_TAG |$(BITRISE_GIT_TAG) |
