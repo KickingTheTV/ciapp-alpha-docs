@@ -49,6 +49,21 @@ INFO    datadog.trace.core.StatusLogger#logStatus: DATADOG TRACER CONFIGURATION 
 
 Now you can use your Jenkins as you normally do.
 
+### Connecting Logs and Traces
+
+If you are already collecting logs in your Jenkins before enabling the traces collection, you don't need to perform additional actions.
+
+If you are not collecting logs in your Jenkins yet, you need to enable the logs collection modifying the same file we used to enable the traces collection.
+
+*  Add or modify the following XML nodes:
+{% highlight xml %}
+  <collectBuildLogs>true</collectBuildLogs>
+{% endhighlight %}
+*  Save and close.
+*  Restart Jenkins.
+
+**Important**: It's not recommended using the Jenkins UI interface to activate the logs collection if you want to connect Logs and Traces. The Traces feature is hidden in the UI and may cause the trace collection to be disabled if the UI is used directly. The best approach is to modify the XML file.
+
 ## Datadog Agent
 
 The [Datadog Agent](https://docs.datadoghq.com/agent/) needs to be accessible by the Jenkins instance you are using.
