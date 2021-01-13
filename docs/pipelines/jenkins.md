@@ -62,7 +62,7 @@ If you are not collecting logs in your Jenkins yet, you need to enable the logs 
 *  Save and close.
 *  Restart Jenkins.
 
-**Important**: It's not recommended using the Jenkins UI interface to activate the logs collection if you want to connect Logs and Traces. The Traces feature is hidden in the UI and may cause the trace collection disabling if the UI is used directly. The best approach is to modify the XML file.
+**Important**: It's not recommended using the Jenkins UI interface to activate the logs collection if you want to connect Logs and Traces. The Traces feature is hidden in the UI and may cause the trace collection to be disabled if the UI is used directly. The best approach is to modify the XML file.
 
 ## Datadog Agent
 
