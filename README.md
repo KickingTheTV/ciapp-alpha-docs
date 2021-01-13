@@ -54,10 +54,3 @@ cd docs
 ```bash
 bundle exec jekyll serve
 ```
-
-
-
-
-
-
-
