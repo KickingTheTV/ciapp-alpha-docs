@@ -64,6 +64,28 @@ If you are not collecting logs in your Jenkins yet, you need to enable the logs 
 
 **Important**: It's not recommended using the Jenkins UI interface to activate the logs collection if you want to connect Logs and Traces. The Traces feature is hidden in the UI and may cause the trace collection to be disabled if the UI is used directly. The best approach is to modify the XML file.
 
+### Manual configuration of the default branch
+
+The pipeline reported to Datadog needs to have the tag `git.default_branch`. 
+
+In some occasions, the plugin cannot extract this information automatically because Jenkins is very selective on checking out only the minimum information required to execute the build.
+
+You can set the default branch manually using the `DD_GIT_DEFAULT_BRANCH` environment variable in your build. 
+
+Example:
+{% highlight groovy %}
+pipeline {
+    agent any
+    environment {
+        DD_GIT_DEFAULT_BRANCH = 'master'
+        ...
+    }
+    stages {
+        ...
+    }
+}
+{% endhighlight %}
+
 ## Datadog Agent
 
 The [Datadog Agent](https://docs.datadoghq.com/agent/) needs to be accessible by the Jenkins instance you are using.
