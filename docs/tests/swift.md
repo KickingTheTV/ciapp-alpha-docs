@@ -82,19 +82,21 @@ Depending on your CI service, you must also set the following environment variab
 
 #### GitLab CI
 
-| Key                  | Value                   |
-| -------------------  | ----------------------- |
+| Key                  | Value             |
+| -------------------  | ----------------- |
 |CI_COMMIT_SHA      |$(CI_COMMIT_SHA)      |
 |CI_REPOSITORY_URL  |$(CI_REPOSITORY_URL)  |
 |CI_PROJECT_DIR     |$(CI_PROJECT_DIR)     |
 |CI_COMMIT_BRANCH   |$(CI_COMMIT_BRANCH)   |
-|CI_COMMIT_TAG |$(CI_COMMIT_TAG) |
+|CI_COMMIT_TAG      |$(CI_COMMIT_TAG)      |
 |GITLAB_CI          |$(GITLAB_CI)          |
+|CI_JOB_STAGE       |$(CI_JOB_STAGE)       |
+|CI_JOB_NAME        |$(CI_JOB_NAME)        |
 |CI_JOB_URL         |$(CI_JOB_URL)         |
-|CI_PIPELINE_ID         |$(CI_PIPELINE_ID)         |
-|CI_PIPELINE_IID         |$(CI_PIPELINE_IID)         |
-|CI_PIPELINE_URL         |$(CI_PIPELINE_URL)         |
-|CI_PROJECT_PATH |$(CI_PROJECT_PATH) |
+|CI_PIPELINE_ID     |$(CI_PIPELINE_ID)     |
+|CI_PIPELINE_IID    |$(CI_PIPELINE_IID)    |
+|CI_PIPELINE_URL    |$(CI_PIPELINE_URL)    |
+|CI_PROJECT_PATH    |$(CI_PROJECT_PATH)    |
 
 
 #### Travis
