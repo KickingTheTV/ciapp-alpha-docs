@@ -10,7 +10,7 @@ parent: Test Instrumentation
 
 ## Using Maven
 
-Add a new Maven profile in your root `pom.xml` configuring the Datadog Java tracer dependency and the `javaagent` arg property, replacing `0.68.0` with the latest version of the tracer: 
+Add a new Maven profile in your root `pom.xml` configuring the Datadog Java tracer dependency and the `javaagent` arg property, replacing `$VERSION` with the latest version of the tracer accessible via [Maven Repository](https://mvnrepository.com/artifact/com.datadoghq/dd-java-agent): 
 
 {% highlight xml %}
 <profile>
@@ -20,14 +20,14 @@ Add a new Maven profile in your root `pom.xml` configuring the Datadog Java trac
   </activation>
 
   <properties>
-    <dd.java.agent.arg>-javaagent:${settings.localRepository}/com/datadoghq/dd-java-agent/0.68.0/dd-java-agent-0.68.0.jar</dd.java.agent.arg>
+    <dd.java.agent.arg>-javaagent:${settings.localRepository}/com/datadoghq/dd-java-agent/$VERSION/dd-java-agent-$VERSION.jar</dd.java.agent.arg>
   </properties>
 
   <dependencies>
     <dependency>
         <groupId>com.datadoghq</groupId>
         <artifactId>dd-java-agent</artifactId>
-        <version>0.68.0</version>
+        <version>$VERSION</version>
         <scope>provided</scope>
     </dependency>  
   </dependencies> 
@@ -68,7 +68,7 @@ After this, you can run your tests using the `ci-app` profile, for example using
 
 ## Using Gradle
 
-Add the `ddTracerAgent` entry to the `configurations` task block and add the Datadog Java tracer dependency, replacing `0.68.0` with the latest version of the tracer.
+Add the `ddTracerAgent` entry to the `configurations` task block and add the Datadog Java tracer dependency, replacing `$VERSION` with the latest version of the tracer accessible via [Maven Repository](https://mvnrepository.com/artifact/com.datadoghq/dd-java-agent).
 
 {% highlight groovy %}
 configurations {
@@ -76,7 +76,7 @@ configurations {
 }
 
 dependencies {
-    ddTracerAgent "com.datadoghq:dd-java-agent:0.68.0"
+    ddTracerAgent "com.datadoghq:dd-java-agent:$VERSION"
 }
 {% endhighlight %}
 
@@ -91,6 +91,8 @@ test {
 {% endhighlight %}
 
 After this, you can run your tests as you normally do, for example using the `./gradlew cleanTest test --rerun-tasks` command.
+
+**Important:** As Gradle builds can be customizable programmatically, you may need to adapt these steps to your specific build configuration.
 
 ## Enabling
 
@@ -117,6 +119,8 @@ To improve the Datadog Java agent startup, follow the next recommended configura
 | `dd.jmxfetch.enabled`          | `DD_JMXFETCH_ENABLED`          | `true`             | `false`                                                                |
 
 You can change the test integration from `JUnit` to `TestNG` modifying the correspondent option.
+
+**Important:** You may want to enable more integrations if you have integration tests. If you want to enable all default integrations, just avoid setting the `DD_INTEGRATIONS_ENABLED` property.
 
 ## Datadog Agent 
 
