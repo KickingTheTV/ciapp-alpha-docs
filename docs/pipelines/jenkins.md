@@ -17,6 +17,14 @@ To enable the APM traces collection for Jenkins builds and pipelines:
 
 APM Traces feature is only available if the `Datadog Agent` mode is selected.
 
+### Manual installation from your local station
+During the alpha phase, you could need install a release candidate artifact from your local station manually.
+
+To do that, you can follow the next steps:
+* Access to `$JENKINS_URL/pluginManager/advanced`
+* In the `Upload Plugin` section, upload the `datadog.hpi` artifact from your local station.
+* Restart the Jenkins instance. 
+
 ## Enabling
 
 Traces collection UI configuration is hidden for the general public.
