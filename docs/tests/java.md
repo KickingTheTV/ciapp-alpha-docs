@@ -122,6 +122,7 @@ To improve the Datadog Java agent startup, follow the next recommended configura
 | `dd.trace.agent.port`          | `DD_TRACE_AGENT_PORT`          | `8126`             | Make sure this property targets the Datadog Agent port.                |
 | `dd.integrations.enabled`      | `DD_INTEGRATIONS_ENABLED`      | `true`             | `false`                                                                |
 | `dd.integration.junit.enabled` | `DD_INTEGRATION_JUNIT_ENABLED` | `false`            | `true`                                                                 |
+| `dd.prioritization.type`       | `DD_PRIORITIZATION_TYPE`       | `FastLane`         | `EnsureTrace`                                                          |
 | `dd.jmxfetch.enabled`          | `DD_JMXFETCH_ENABLED`          | `true`             | `false`                                                                |
 
 You can change the test integration from `JUnit` to `TestNG` modifying the correspondent option.
