@@ -103,7 +103,13 @@ All configuration options below have system property and environment variable eq
 | `dd.integration.junit.enabled`  | `DD_INTEGRATION_JUNIT_ENABLED`  | `false` | When `true`, tests based on JUnit runners are reported. |
 | `dd.integration.testng.enabled` | `DD_INTEGRATION_TESTNG_ENABLED` | `false` | When `true`, tests based on TestNG are reported.        |
 
-Additionally, all [Datadog Tracer configuration](https://docs.datadoghq.com/tracing/setup_overview/setup/java/?tab=containers#configuration) options can be used to during test phase.
+Additionally, you need to set the tracer prioritization type to `EnsureTrace` to avoid dropping test spans.
+
+| SYSTEM PROPERTY          | ENVIRONMENT VARIABLE     | DEFAULT    | DESCRIPTION                                                       |
+|--------------------------|--------------------------|------------|-------------------------------------------------------------------|
+| `dd.prioritization.type` | `DD_PRIORITIZATION_TYPE` | `FastLane` | Set to `EnsureTrace` to avoid dropping tests spans by the tracer. |
+
+Finally, all [Datadog Tracer configuration](https://docs.datadoghq.com/tracing/setup_overview/setup/java/?tab=containers#configuration) options can be used to during test phase.
 
 ### Recommended configuration
 
