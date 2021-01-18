@@ -40,3 +40,5 @@ Use this URL `https://webhooks-http-intake.logs.datadoghq.com/v1/input/(api-key)
 and if you do not have an API key you can create one [here](https://app.datadoghq.com/account/settings#api)
 
 You can make use of the same optional parameters that the native integration has, if you include them as query parameters in the webhook URL: `?env=(your-env)&service=(your-service-name)`
+
+![Webhooks Screenshot](/ciapp-alpha-docs/assets/gitlab-webhooks.png)
