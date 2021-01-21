@@ -96,6 +96,24 @@ pipeline {
 }
 {% endhighlight %}
 
+## Continue the trace with your own spans
+
+### Using the datadog-ci CLI
+
+TBD
+
+### Manual continuation
+
+If you are already sending traces about your builds, you can use the information of the `TraceID` and `ParentSpanID` that is available in every step of your Jenkins Build to continue the trace.
+
+This information is accessible via environment variables.
+
+| ENVIRONMENT VARIABLE  | DESCRIPTION                                                                      | EXAMPLE             |
+|-----------------------|----------------------------------------------------------------------------------|---------------------|
+| `X_DATADOG_TRACE_ID`  | Long 64bits that represents `TraceID` of the Jenkins Build                       | 8327142742983216939 |
+| `X_DATADOG_PARENT_ID` | Long 64bits that represents `ParentSpanID` of the last span in the Jenkins Build | 2613301644055962438 |
+ 
+
 ## Datadog Agent
 
 The [Datadog Agent](https://docs.datadoghq.com/agent/) needs to be accessible by the Jenkins instance you are using.
