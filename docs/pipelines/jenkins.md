@@ -67,20 +67,37 @@ If you are not collecting logs in your Jenkins yet, you need to enable the logs 
 
 *  Add or modify the following XML nodes:
 {% highlight xml %}
-  <reportWith>DSD</reportWith>
-  <targetApiKey>*******</targetApiKey>
-  <targetHost>(use your datadog agent host)</targetHost>
-  <targetPort>8125</targetPort>
-  <targetLogCollectionPort>8125</targetLogCollectionPort>
-  <targetTraceCollectionPort>8126</targetTraceCollectionPort>
-  <traceServiceName>my-jenkins-instance</traceServiceName>
-  <collectBuildTraces>true</collectBuildTraces>  
   <collectBuildLogs>true</collectBuildLogs>
 {% endhighlight %}
 *  Save and close.
 *  Restart Jenkins.
 
 **Important**: It's not recommended using the Jenkins UI interface to activate the logs collection if you want to connect Logs and Traces. The Traces feature is hidden in the UI and may cause the trace collection to be disabled if the UI is used directly. The best approach is to modify the XML file.
+
+Finally, you need to enable logs collection in the [Datadog Agent](https://docs.datadoghq.com/agent/)
+
+* Collecting logs is disabled by default in the [Datadog Agent](https://docs.datadoghq.com/agent/), enable it in your `datadog.yaml` file:
+{% highlight yaml %}
+logs_enabled: true
+{% endhighlight %}
+*  To collect Jenkins logs, create a custom log source file for your Agent by creating a `conf.yaml` inside `conf.d/jenkins.d` with the following:
+{% highlight yaml %}
+logs:
+  - type: tcp 
+    port: <PORT> 
+    service: <SERVICE>
+    source: jenkins
+{% endhighlight %}
+*  Restart the Agent.
+
+The Jenkins plugin is configured to use the `8125` port by default. 
+
+If you set a different one, you need to configure the same port you specified above as the Log Collection Port in the `org.datadog.jenkins.plugins.datadog.DatadogGlobalConfiguration.xml` file:
+{% highlight xml %}
+  <targetPort><PORT></targetPort>
+  <targetLogCollectionPort><PORT></targetLogCollectionPort>
+{% endhighlight %}
+and restart the Jenkins instance.
 
 ### Manual configuration of the default branch
 
