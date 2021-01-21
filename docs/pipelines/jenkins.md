@@ -67,6 +67,14 @@ If you are not collecting logs in your Jenkins yet, you need to enable the logs 
 
 *  Add or modify the following XML nodes:
 {% highlight xml %}
+  <reportWith>DSD</reportWith>
+  <targetApiKey>*******</targetApiKey>
+  <targetHost>(use your datadog agent host)</targetHost>
+  <targetPort>8125</targetPort>
+  <targetLogCollectionPort>8125</targetLogCollectionPort>
+  <targetTraceCollectionPort>8126</targetTraceCollectionPort>
+  <traceServiceName>my-jenkins-instance</traceServiceName>
+  <collectBuildTraces>true</collectBuildTraces>  
   <collectBuildLogs>true</collectBuildLogs>
 {% endhighlight %}
 *  Save and close.
