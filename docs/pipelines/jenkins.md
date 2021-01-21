@@ -125,7 +125,11 @@ pipeline {
 
 ### Using the datadog-ci CLI
 
-TBD
+You can wrap your shell commands using the `datadog-ci` CLI. 
+
+This will automatically continue your trace creating a new span with every command.
+
+You can check the [datadog-ci CLI](/custom-instrumentation/datadog-ci) documentation to know how to install and using it.
 
 ### Manual continuation
 
