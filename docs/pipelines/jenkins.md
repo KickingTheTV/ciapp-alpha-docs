@@ -4,6 +4,7 @@ title:  Jenkins
 categories: ci jenkins
 permalink: /ciprovider/jenkins
 parent: Pipeline Instrumentation
+nav_order: 1
 ---
 
 # Installation

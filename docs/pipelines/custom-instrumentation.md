@@ -1,16 +1,13 @@
 ---
 layout: page
-title: Datadog CI
-categories: cli
-permalink: /custom-instrumentation/datadog-ci
-parent: Custom Instrumentation
+title: Custom Instrumentation
+categories: ci cli custom
+permalink: /ciprovider/datadog-ci
+parent: Pipeline Instrumentation
+nav_order: 10
 ---
 
-# Datadog CI
-
-You can get deeper insight into your pipeline by using Datadog's CLI, [datadog-ci](https://github.com/DataDog/datadog-ci). 
-
-You can use `datadog-ci` to wrap your CI commands: 
+You can get deeper insights into your pipeline by using the [`datadog-ci`](https://github.com/DataDog/datadog-ci) CLI to wrap your CI commands: 
 
 ```bash
 $ datadog-ci trace command yarn test

@@ -4,6 +4,7 @@ title:  GitLab CI
 categories: ci gitlab
 permalink: /ciprovider/gitlab
 parent: Pipeline Instrumentation
+nav_order: 2
 ---
 
 To enable traces for your GitLab CI pipelines a [native integration](https://gitlab.com/gitlab-org/gitlab/-/merge_requests/46564) has been merged into GitLab and is hidden under a [feature flag](https://docs.gitlab.com/ee/administration/feature_flags.html) since the release __v13.7.0__.
