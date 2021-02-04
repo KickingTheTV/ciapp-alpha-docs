@@ -34,6 +34,24 @@ require('dd-trace').init()
 module.exports = require('jest-environment-node') 
 {% endhighlight %}
 
+## Mocha instrumentation
+
+If you have not installed `dd-trace` yet you need to do it first:
+
+```bash
+yarn add --dev dd-trace
+```
+
+To instrument your mocha tests, add `--require dd-trace/init` however you normally run them, e.g. update your `package.json`:
+
+{% highlight javascript %}
+// package.json
+'scripts': {
+  'test': 'mocha --require dd-trace/init'
+},
+{% endhighlight %}
+
+
 ## Datadog Agent 
 
 The [Datadog Agent](https://docs.datadoghq.com/agent/) needs to be accessible by the environment you're using to run your tests on.
