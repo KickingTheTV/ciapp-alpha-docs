@@ -75,6 +75,21 @@ dd-trace --dd-env=ci -- dotnet test --framework netcoreapp3.1
 
 This will autoinstrument the command: `dotnet test --framework netcoreapp3.1` with `ci` as environment.
 
+## Instrumenting MsTest V2 framework (pre-alpha)
+
+The support for MsTest V2 framework is in pre-alpha stage and it's disabled by default. 
+
+To enable it, you need to set the following environment variables before running the `dd-trace dotnet test` command:
+
+```
+DD_TRACE_CALLTARGET_ENABLED=true
+DD_CLR_ENABLE_INLINING=true
+```
+
+This will enable the new instrumentation format in the dotnet tracer.
+
+Notice that some third-party libraries' instrumentation can be missing during the pre-alpha stage.
+
 ## Datadog Agent 
 
 The [Datadog Agent](https://docs.datadoghq.com/agent/) needs to be accessible by the environment you're using to run your tests on.
@@ -89,6 +104,7 @@ The [Datadog Agent](https://docs.datadoghq.com/agent/) needs to be accessible by
 
 * [xUnit 2.2+](https://xunit.net/)
 * [NUnit 3.0+](https://nunit.org/)
+* [MsTest V2 14+ (pre-alpha)](https://github.com/microsoft/testfx)
 
 ## Supported CI providers
 
