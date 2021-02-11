@@ -1,9 +1,10 @@
 ---
 layout: page
-title:  Running tests inside a container
-categories: test container
-permalink: /tests-in-container
-nav_order: 4
+title:  Using containers
+categories: tests containers docker
+permalink: /tests/containers
+parent: Test Instrumentation
+nav_order: 0
 ---
 
 # Running tests inside a container
@@ -82,7 +83,7 @@ Additionally, notice that you also need to forward all Datadog environment varia
 - CIRCLE_BRANCH
 - CIRCLE_TAG
 
-### [Github Actions](https://docs.github.com/en/free-pro-team@latest/actions/reference/environment-variables#default-environment-variables)
+### [GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/reference/environment-variables#default-environment-variables)
 
 - GITHUB_ACTION
 - GITHUB_RUN_ID
