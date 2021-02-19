@@ -76,37 +76,6 @@ DD_API_KEY=xxxx docker-compose up --build --abort-on-container-exit tests
 
 The following sections provide CI provider-specific instructions to run and configure the Datadog agent to report test information.
 
-### CircleCI
-
-In order to run the Datadog Agent in a [CircleCI](https://circleci.com/) workflow, the agent container has to run as a service within the [`docker` executor](https://circleci.com/docs/2.0/configuration-reference/#docker). CircleCI will automatically run the Datadog agent container and the tests container [on the same network](https://circleci.com/docs/2.0/executor-types/#using-multiple-docker-images).
-
-For example:
-
-```yaml
-# .circleci/config.yml
-version: 2.1
-
-jobs:
-  test:
-    docker:
-      - image: circleci/<language>:<version_tag>
-      - image: datadog/agent:latest
-        environment:
-          DD_HOSTNAME: none
-          DD_INSIDE_CI: true
-
-    steps:
-      - checkout
-      - run: make test
-
-workflows:
-  test:
-    jobs:
-      - test
-```
-
-Then, add your [Datadog API key](https://app.datadoghq.com/account/settings#api) to your [project environment variables](https://circleci.com/docs/2.0/env-vars/) with the key `DD_API_KEY`.
-
 
 ### Azure Pipelines
 
@@ -125,8 +94,8 @@ resources:
         - 8126:8126
         env:
           DD_API_KEY: $(ddApiKey)
-          DD_HOSTNAME: none
-          DD_INSIDE_CI: true
+          DD_HOSTNAME: "none"
+          DD_INSIDE_CI: "true"
 
 jobs:	
   - job: test
@@ -146,9 +115,9 @@ In order to run the Datadog Agent in [GitLab.com](https://gitlab.com/), the agen
 ```yaml
 # .gitlab-ci.yml
 variables:
-  DD_HOSTNAME: none
-  DD_AGENT_HOST: dd_agent
-  DD_INSIDE_CI: true
+  DD_AGENT_HOST: "dd_agent"
+  DD_HOSTNAME: "none"
+  DD_INSIDE_CI: "true"
 
 test:
   services:
@@ -177,7 +146,8 @@ jobs:
           - 8126:8126
         env:
           DD_API_KEY: ${{ secrets.DD_API_KEY }}
-          DD_INSIDE_CI: true
+          DD_HOSTNAME: "none"
+          DD_INSIDE_CI: "true"
     steps:
       - run: make test
 ```
