@@ -118,6 +118,7 @@ variables:
   DD_AGENT_HOST: "dd_agent"
   DD_HOSTNAME: "none"
   DD_INSIDE_CI: "true"
+  DD_API_KEY: $DD_API_KEY
 
 test:
   services:
