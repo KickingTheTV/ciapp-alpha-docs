@@ -131,7 +131,6 @@ test:
 Then, add your [Datadog API key](https://app.datadoghq.com/account/settings#api) to your [project environment variables](https://docs.gitlab.com/ee/ci/variables/README.html#custom-environment-variables) with the key `DD_API_KEY`.
 
 
-
 ### GitHub Actions
 
 In order to run the Datadog Agent in [GitHub Actions](https://docs.github.com/en/actions), the agent container has to be defined under [`services`](https://docs.github.com/en/actions/guides/about-service-containers):
@@ -155,3 +154,35 @@ jobs:
 {% endraw %}
 
 Then, add your [Datadog API key](https://app.datadoghq.com/account/settings#api) to your [project secrets](https://docs.github.com/en/actions/reference/encrypted-secrets) with the key `DD_API_KEY`.
+
+
+### CircleCI
+
+In order to run the Datadog Agent in [CircleCI](https://circleci.com/), the agent container has to be launched before running tests using the [datadog/agent](https://circleci.com/developer/orbs/orb/datadog/agent) CircleCI orb, and stopped afterwards to ensure results are flushed out to Datadog.
+
+For example:
+
+```yaml
+# .circleci/config.yml
+version: 2.1
+
+orbs:
+  datadog-agent: datadog/agent@0.0.1
+
+jobs:
+  test:
+    docker:
+      - image: circleci/<language>:<version_tag>
+    steps:
+      - checkout
+      - datadog-agent/setup
+      - run: make test
+      - datadog-agent/stop
+
+workflows:
+  test:
+    jobs:
+      - test
+```
+
+Then, add your [Datadog API key](https://app.datadoghq.com/account/settings#api) to your [project environment variables](https://circleci.com/docs/2.0/env-vars/) with the key `DD_API_KEY`.
