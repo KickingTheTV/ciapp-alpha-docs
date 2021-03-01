@@ -54,7 +54,7 @@ The lastest documentation can be found [here](https://github.com/DataDog/dd-trac
 
 RSpec integration will trace all executions of example groups and examples when using `rspec` test framework.
 
-To activate your integration, use the `Datadog.configure` method:
+To activate your integration, use the `Datadog.configure` method. You can add this to the `spec_helper.rb`
 
 {% highlight ruby %}
 require 'rspec'
@@ -63,6 +63,16 @@ require 'ddtrace'
 # Configure default RSpec integration
 Datadog.configure do |c|
   c.use :rspec, options
+  c.tracer writer_options: { buffer_size: 5000, flush_interval: 0.5 }
+end
+{% endhighlight %}
+
+If you have many fast unit tests, you will need to tweak flushing settings. You can enable `health_metrics` to tweak the numbers. This will send a metric called `datadog.tracer.queue.dropped.traces`
+
+{% highlight ruby %}
+Datadog.configure do |c|
+  c.use :rspec, options
+  c.diagnostics.health_metrics.enabled = true
 end
 {% endhighlight %}
 
