@@ -9,14 +9,14 @@ nav_order: 6
 
 ## March 2nd, 2021
 
-**Pipeline & Test data available in Dashboards - Both Tests & Pipelines**
+**Pipeline & Test data available in Dashboards**
 
 ![Pipeline & Test data in Dashboards](/docs/assets/pipeline-test-data-in-dashboards.png)
 
-When creating new Dashboard widgets, you'll now have "CI Pipelines" and "CI Tests" available as data sources. When selecting CI Pipelines, you'll be able to choose whether you want to work with Pipelines, Stages, Jobs, or All.
+When creating new Dashboard widgets, you'll now have "CI Pipelines" and "CI Tests" available as data sources. When selecting CI Pipelines, you'll be able to choose whether you want to work with Pipelines, Stages, Jobs, or All spans.
 
 
-**Flaky Test Management - Tests**
+**Flaky Test Management**
 
 ![Flaky Test Management](/docs/assets/flaky-test-management.png)
 
@@ -32,16 +32,16 @@ When it comes to prioritizing flaky tests, we provide a few different ways for y
 * Once you've identified a flaky test you want to fix, clicking on a test will provide useful pointers to the commits in which the test first and last flaked.
 
 
-**Test Performance Tab - Tests**
+**Test Performance Tab**
 
-![Test Performance](/docs/assets/test-performance.png)
+![Test Performance](docs/assets/test-performance.gif)
 
 There is a new Performance tab in the detail view of your Tests. You can view all of the test runs for a given test for whatever time frame selected. This provides an easy way to get a historical perspective of your test.
 
 You can see if your test is getting slower over time or if your efforts to improve test speed were effective and held through multiple commits.
 
 
-**Most Common Errors - Tests**
+**Most Common Errors**
 
 ![Most Common Errors](/docs/assets/most-common-errors.png)
 
@@ -50,8 +50,8 @@ We've updated the Test Summary section in the Test Service Overview page. We've 
 This can be useful for surfacing the highest contributing root causes for test failures across your entire test suite.
 
 
-**Pipeline, Stage, and Job Selector - Pipelines**
+**Pipeline, Stage, and Job Selector**
 
 ![Pipeline stage job selector](/docs/assets/pipeline-stage-job-selector.png)
 
-We've updated our pipeline tables to include a selector, so you can see a more granular breakdown by Stage or Job.
+We've updated our pipeline tables to include a selector, so you can search for specific stages and job executions.
