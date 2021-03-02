@@ -11,14 +11,14 @@ nav_order: 6
 
 **Pipeline & Test data available in Dashboards**
 
-![Pipeline & Test data in Dashboards](/docs/assets/pipeline-test-data-in-dashboards.png)
+![Pipeline & Test data in Dashboards](assets/pipeline-test-data-in-dashboards.png)
 
 When creating new Dashboard widgets, you'll now have "CI Pipelines" and "CI Tests" available as data sources. When selecting CI Pipelines, you'll be able to choose whether you want to work with Pipelines, Stages, Jobs, or All spans.
 
 
 **Flaky Test Management**
 
-![Flaky Test Management](/docs/assets/flaky-test-management.png)
+![Flaky Test Management](assets/flaky-test-management.png)
 
 Flaky tests can be very problematic in an organization: knowing which tests are flaky is left to tribal knowledge, developers lose trust in their test results, and a tremendous amount of time and resources are wasted on pipeline retries.
 
@@ -34,7 +34,7 @@ When it comes to prioritizing flaky tests, we provide a few different ways for y
 
 **Test Performance Tab**
 
-![Test Performance](docs/assets/test-performance.gif)
+![Test Performance](assets/test-performance.gif)
 
 There is a new Performance tab in the detail view of your Tests. You can view all of the test runs for a given test for whatever time frame selected. This provides an easy way to get a historical perspective of your test.
 
@@ -43,7 +43,7 @@ You can see if your test is getting slower over time or if your efforts to impro
 
 **Most Common Errors**
 
-![Most Common Errors](/docs/assets/most-common-errors.png)
+![Most Common Errors](assets/most-common-errors.png)
 
 We've updated the Test Summary section in the Test Service Overview page. We've added the Most Common Errors widget, which will show you the most common error types and their number of occurrences, across all of your tests for the time frame selected.
 
@@ -52,6 +52,6 @@ This can be useful for surfacing the highest contributing root causes for test f
 
 **Pipeline, Stage, and Job Selector**
 
-![Pipeline stage job selector](/docs/assets/pipeline-stage-job-selector.png)
+![Pipeline stage job selector](assets/pipeline-stage-job-selector.png)
 
 We've updated our pipeline tables to include a selector, so you can search for specific stages and job executions.
