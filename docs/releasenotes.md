@@ -29,7 +29,8 @@ When it comes to prioritizing flaky tests, we provide a few different ways for y
 * Occurrences - this is the number of commits in which the test exhibited flaky behavior
 * Failure Rate - the percentage of test runs that have failed for this test since it first flaked
 * Trend - a visual tool that can help you determine if a flaky test was fixed or it's still actively flaking
-* Once you've identified a flaky test you want to fix, clicking on a test will provide useful pointers to the commits in which the test first and last flaked.
+
+Once you've identified a flaky test you want to fix, clicking on a test will provide useful pointers to the commits in which the test first and last flaked.
 
 
 **Test Performance Tab**
