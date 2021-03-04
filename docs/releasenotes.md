@@ -27,7 +27,7 @@ Flaky tests are defined as tests that exhibit both a passing and failing status 
 When it comes to prioritizing flaky tests, we provide a few different ways for you to better understand each flaky test:
 
 * Occurrences - this is the number of commits in which the test exhibited flaky behavior
-* Failure Rate - the percentage of test runs that have failed for this test since it first flaked
+* Failure Rate - the percentage of test runs that have failed for this test in the time frame selected
 * Trend - a visual tool that can help you determine if a flaky test was fixed or it's still actively flaking
 
 Once you've identified a flaky test you want to fix, clicking on a test will provide useful pointers to the commits in which the test first and last flaked.
